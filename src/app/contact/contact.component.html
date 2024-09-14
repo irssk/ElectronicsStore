@@ -1,0 +1,104 @@
+<h2 class="contact__title">Get in touch</h2>
+<section class="contact__container">
+  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="send()">
+
+    <input
+      type="text"
+      placeholder="Enter your name"
+      formControlName="name"
+      [class.valid]="contactForm.controls['name'].valid"
+      [class.invalid]="contactForm.controls['name'].invalid &&
+      (contactForm.controls['name'].touched || contactForm.controls['name'].dirty)"
+    />
+
+    <div *ngIf="contactForm.controls['name'].invalid &&
+      (contactForm.controls['name'].touched || contactForm.controls['name'].dirty)">
+      <small class="error-message" *ngIf="contactForm.controls['name'].hasError('minlength')">
+        At least 4 characters are required.
+      </small>
+      <small class="error-message" *ngIf="contactForm.controls['name'].hasError('required')">
+        Required field.
+      </small>
+    </div>
+
+        <input
+      type="text"
+      placeholder="Enter a subject"
+      formControlName="subject"
+      [class.valid]="contactForm.controls['subject'].valid"
+      [class.invalid]="contactForm.controls['subject'].invalid &&
+      (contactForm.controls['subject'].touched || contactForm.controls['subject'].dirty)"
+    />
+
+    <div *ngIf="contactForm.controls['subject'].invalid &&
+      (contactForm.controls['subject'].touched || contactForm.controls['subject'].dirty)">
+      <small class="error-message" *ngIf="contactForm.controls['subject'].hasError('minlength')">
+        At least 10 characters are required.
+      </small>
+      <small class="error-message" *ngIf="contactForm.controls['subject'].hasError('required')">
+        Required field.
+      </small>
+    </div>
+
+    <input
+      type="tel"
+      placeholder="(00) 00000-0000"
+      mask="(00) 00000-0000"
+      formControlName="phone"
+      [class.valid]="contactForm.controls['phone'].valid"
+      [class.invalid]="contactForm.controls['phone'].invalid &&
+      (contactForm.controls['phone'].touched || contactForm.controls['phone'].dirty)"
+    />
+
+    <div *ngIf="contactForm.controls['phone'].invalid &&
+    (contactForm.controls['phone'].touched || contactForm.controls['phone'].dirty)">
+      <small class="error-message" *ngIf="contactForm.controls['phone'].hasError('minlength')">
+        At least 11 characters are required.
+      </small>
+      <small class="error-message" *ngIf="contactForm.controls['phone'].hasError('required')">
+        Required field.
+      </small>
+    </div>
+
+    <input
+      type="email"
+      placeholder="Enter your email address"
+      formControlName="email"
+      [class.valid]="contactForm.controls['email'].valid"
+      [class.invalid]="contactForm.controls['email'].invalid &&
+      (contactForm.controls['email'].touched || contactForm.controls['email'].dirty)"
+    />
+    <div *ngIf="contactForm.controls['email'].invalid &&
+    (contactForm.controls['email'].touched || contactForm.controls['email'].dirty)">
+      <small class="error-message" *ngIf="contactForm.controls['email'].hasError('email')">
+        Enter a valid email.
+      </small>
+      <small class="error-message" *ngIf="contactForm.controls['email'].hasError('required')">
+        Required field.
+      </small>
+    </div>
+
+    <textarea
+      maxlength="300"
+      placeholder="Enter your message"
+      rows="4"
+      formControlName="message"
+      [class.valid]="contactForm.controls['message'].valid"
+      [class.invalid]="contactForm.controls['message'].invalid &&
+      (contactForm.controls['message'].touched || contactForm.controls['message'].dirty)"></textarea>
+    <div *ngIf="contactForm.controls['message'].invalid &&
+    (contactForm.controls['message'].touched || contactForm.controls['message'].dirty)">
+      <small class="error-message" *ngIf="contactForm.controls['message'].hasError('minlength')">
+        At least 20 characters are required.
+      </small>
+      <small class="error-message" *ngIf="contactForm.controls['message'].hasError('required')">
+        Required field.
+      </small>
+    </div>
+    <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+  </form>
+  <address>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115003.44201003868!2d30.480322028149782!3d50.436610530315455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5a3243230d7%3A0x8364f99720502f97!2sRiver%20Mall!5e0!3m2!1sru!2sua!4v1726333481036!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p>104 Kyrylivska Street, Kyiv, 04080</p>
+  </address>
+</section>

@@ -1,0 +1,25 @@
+<header class="main-header">
+  <h1 class="main-header__title"> <a routerLink="products">
+    <span class="main-header__title--blue">Electronics</span>
+    <span class="main-header__title--orange">Store</span>
+  </a></h1>
+  <div class="container-menu">
+    <nav class="main-header__menu">
+      <ul>
+        <li><a routerLink="products">
+          Products
+        </a></li>
+        <li><a routerLink="cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart
+          <span class="badge-carrinho">{{cartService.getCartItems().length}}</span>
+        </a></li>
+        <li><a routerLink="contact">Contact</a></li>
+        <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+      </ul>
+    </nav>
+    <app-search-bar></app-search-bar>
+  </div>
+</header>
